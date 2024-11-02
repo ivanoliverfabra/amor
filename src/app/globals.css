@@ -2,20 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 30 100% 90%; /* Warm ivory background */
+    --foreground: 0 0% 20%; /* Dark brown text */
+    --card: 30 100% 85%; /* Cream card color */
+    --card-foreground: 0 0% 20%; /* Dark brown text on cards */
+    --popover: 30 100% 85%; /* Cream popover color */
+    --popover-foreground: 0 0% 20%; /* Dark brown text on popovers */
+    --primary: 30 70% 30%; /* Dark brown primary accent */
+    --primary-foreground: 30 100% 85%; /* Cream text on primary accent */
+    --secondary: 30 50% 70%; /* Light brown secondary accent */
+    --secondary-foreground: 0 0% 20%; /* Dark brown text on secondary accent */
+    --muted: 30 50% 70%; /* Light brown muted color */
+    --muted-foreground: 0 0% 20%; /* Dark brown text on muted */
+    --accent: 30 70% 30%; /* Dark brown accent color */
+    --accent-foreground: 30 100% 85%; /* Cream text on accent */
+    --destructive: 0 100% 50%; /* Red destructive color */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
+    --border: 0 0% 80%; /* Light brown border color */
+    --input: 30 100% 85%; /* Cream input color */
+    --ring: 30 70% 30%; /* Dark brown ring color */
+    --radius: 0.5rem; /* Rounded corners */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .foo {
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.1) 0px,
+      transparent 5px
+    );
+  }
+
+  .circle-to-square {
+    border-radius: 50%;
+    transition: border-radius 0.5s;
+  }
+
+  .circle-to-square:hover {
+    border-radius: 3rem;
+  }
 }
