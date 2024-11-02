@@ -21,7 +21,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "amor",
   description:
-    "Create matching profile pictures for you and your significant others or friends with Amor. Our user-friendly generator offers customizable designs that celebrate your unique connections and bring your profiles to life!",
+    "Get matching profile pictures for you and your significant others or friends with Amor. Our user-friendly generator offers customizable designs that celebrate your unique connections and bring your profiles to life!",
 };
 
 export default function RootLayout({
